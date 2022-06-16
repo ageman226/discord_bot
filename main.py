@@ -31,7 +31,7 @@ async def sendAnimeRanks(ctx):
     embed.set_thumbnail(url=rankings[0]['image'])
     for rank in rankings:
         thisString = f"{rank['title']} [MyAnimeList Page]({aniPy.urlStart}{rank['id']}) "
-        embed.add_field(name=rank['rank'], value=thisString, inline=True)
+        embed.add_field(name=rank['rank'], value=thisString, inline=False)
     await ctx.send(embed=embed)
 
 @client.command(aliases=["searchanime"])

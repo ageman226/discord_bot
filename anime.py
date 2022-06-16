@@ -41,6 +41,9 @@ def searchAnime(query, limit=1, fields="synopsis"):
         title = newData["node"]["title"]
         image = newData["node"]["main_picture"]["large"]
         synopsis = newData["node"]["synopsis"]
+        # Since embed fields cannot be bigger than 1024, it will shorten if length is too big
+        if len(synopsis) >= 1020:
+            synopsis = synopsis[:1020] + "..."
         animeList.append({"id": id, "title": title, "image": image, "synopsis": synopsis})
     return animeList
     # Use Pandas to change the json into a table.
