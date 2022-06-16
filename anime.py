@@ -46,12 +46,6 @@ def searchAnime(query, limit=1, fields="synopsis"):
             synopsis = synopsis[:1020] + "..."
         animeList.append({"id": id, "title": title, "image": image, "synopsis": synopsis})
     return animeList
-    # Use Pandas to change the json into a table.
-    # df = pd.json_normalize(dataD)
-    # df = df.rename(columns={"node.id": "id",  "node.title": "Title",
-    #                "node.main_picture.medium": "Medium Picture", "node.main_picture.large": "Large Picture"})
-    # return json.loads(df.to_json(orient="records"))
-
 
 def getAnimeDetails(anime_id, fields="synopsis"):
     x = requests.get(
