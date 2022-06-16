@@ -29,6 +29,7 @@ This one is similar to search anime that it uses the Embed feature.  I return th
 - [x] Implement anime.py searchAnime() function
 - [x] Implement anime.py getAnimeRankingsTop() function
 - [ ] Implment the rest of the anime.py functions
+- [ ] Add functionality to assign role by reaction
 - [ ] Add more functions with the myanimelist.net API
 - [ ] Implement a database(probably PostgreSQL)
 - [ ] Add more features according to the server owner
