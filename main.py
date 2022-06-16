@@ -17,6 +17,8 @@ server = discord.Guild
 async def on_ready():
     print("Bot is ready!")
 
+# Test function that gets quote of a person in a list and sends it back
+# Probably will add SQL functionality to it down the line
 @client.command()
 async def wesley(ctx):
     wesleyQuotes = ["im saving the vampires", "I'm coming on"]
@@ -24,6 +26,7 @@ async def wesley(ctx):
     quote = random.choice(wesleyQuotes)
     await ctx.send(f"{quote} -wesley")
 
+# Gets the top anime and prints it in an embed list.
 @client.command(aliases=["topairinganime"])
 async def sendAnimeRanks(ctx):
     rankings = aniPy.getAnimeRankingsTop()
@@ -34,6 +37,7 @@ async def sendAnimeRanks(ctx):
         embed.add_field(name=rank['rank'], value=thisString, inline=False)
     await ctx.send(embed=embed)
 
+#Searches the anime based on the query the bot was sent.
 @client.command(aliases=["searchanime"])
 async def searchAnime(ctx, *, args):
     search = aniPy.searchAnime(args)
@@ -49,7 +53,7 @@ async def searchAnime(ctx, *, args):
     else:
         await ctx.send("There are no results")
         
-
+# Another test function that gives a fortune based on the question and gives a fortune back
 @client.command(aliases=["8ball", "test"])
 async def _8ball(ctx, *, question):
     responses = ["It is certain", "It is decidedly so"]
